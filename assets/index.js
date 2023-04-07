@@ -31,6 +31,8 @@ const entertainmentNav = document.getElementById("entertainment");
 const searchBtn = document.getElementById("searchBtn");
 const searchNews = document.getElementById("searchNews");
 const newsDetails = document.getElementById("newsDetails")
+const searchform = document.querySelector(".d-flex")
+const input = document.querySelector(".form-control me-2")
 
 //add an event listener to the Navbar elements
 //user clicks on the buttons to call the functions below
@@ -69,7 +71,8 @@ healthNav.addEventListener("click", function() {
     fetchHealthNav();
 });
 
-searchBtn.addEventListener("click", function() {
+searchBtn.addEventListener("click", function(event) {
+    event.preventDefault()
     newsType.innerHTML="<h3>Search : "+searchNews.value+"</h3>"
     fetchSearchNews();
 });
@@ -181,21 +184,23 @@ const fetchTechnologyNav = async () => {
     displayNews ();
 }
 
-//Async function to fetch data from search news function
-const fetchSearchNews = async() => {
-    //Handle the search news
-    if (searchNews.value == null)
-    return;
-
-    const response = await fetch (searchEverything + encodeURIComponent(searchNews.value) + `&apiKey=` + apiKey);
-    newsArr = [];
-    if (response.status >= 200 && response.status < 300){
-        const newsObj = await response.json ()
-        newsArr = newsObj.articles;
-            } else {
-            //Handle errors
-        }
-}
+//Function to fetch data from search news function
+function fetchSearchNews() {
+       newsDetails.innerHTML = "";
+    fetch (`https://newsapi.org/v2/everything?q=${input.value}&apiKey=${apiKey}`)
+    .then ((response) => {
+        return response.json() 
+    }).then ((data)=> 
+    data.articles.forEach(article => {
+        let li = document.createElement('li');
+        let a = document.createElement('a');
+        a.setAttribute('href', article.url);
+        a.setAttribute('target', "_blank");
+        a.textContent = article.title;
+        li.appendChild(a);
+        newsDetails.appendChild(li)
+    }))
+    }
 
 //Main Function that adds News to our html Page
 
