@@ -1,7 +1,7 @@
 //Start by initializing the api endpoints to use from newsapi.org
 const apiKey = "1240cc9927f9486b85a82c75db3aa6df"
 
-// const topHeadlines = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
+const topHeadlines = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`
 
 const businessHeadlines=`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=${apiKey}`
 const generalHeadlines=`https://newsapi.org/v2/top-headlines?country=us&category=general&apiKey=${apiKey}`
@@ -11,6 +11,12 @@ const techHeadlines=`https://newsapi.org/v2/top-headlines?country=us&category=te
 const healthHeadlines=`https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=${apiKey}`
 const entHeadlines=`https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=${apiKey}`
 const searchEverything =`https://newsapi.org/v2/everything?q=`
+
+window.onload = function(){
+    newsType.innerHTML="<h3> Headlines </h4>"
+    fetchHeadlines();
+};
+
 //Create an array to store all the news objects that will be fetched
 var newsArr = [];
 
@@ -29,38 +35,61 @@ const newsDetails = document.getElementById("newsDetails")
 //add an event listener to the Navbar elements
 //user clicks on the buttons to call the functions below
 generalNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> General News </h4>"
     fetchGeneralNav();
 });
 
 scienceNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> Science News </h4>"
     fetchScienceNav();
 });
 
 sportNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> Sports News </h4>"
     fetchSportsNav();
 });
 
 technologyNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> Tech News </h4>"
     fetchTechnologyNav();
 });
 
 entertainmentNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> Entertainment News </h4>"
     fetchEntNav();
 });
 
 businessNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> Business News </h4>"
     fetchBusinessNav();
 });
 
 healthNav.addEventListener("click", function() {
+    newsType.innerHTML="<h3> Health News </h4>"
     fetchHealthNav();
 });
 
 searchBtn.addEventListener("click", function() {
+    newsType.innerHTML="<h3>Search : "+searchNews.value+"</h3>"
     fetchSearchNews();
 });
 
 //Async-function used to fetch data for the headlines
+const fetchHeadlines = async () => {
+    const response = await fetch(topHeadlines);
+    newsArr = [];
+    // Check if response status is ok
+    if (response.status >= 200 && response.status < 300){
+    const newsObj = await response.json ()
+    newsArr = newsObj.articles;
+    } else {
+        //Handle errors
+        console.log(response.status, response.statusText);
+    }
+    //Pass the resulting objects into a function that will handle the display
+    displayNews ();
+}
+
 const fetchGeneralNav = async () => {
     const response = await fetch(generalHeadlines);
     newsArr = [];
