@@ -1,82 +1,75 @@
-/* Customize Navbar */
-.navbar-brand {
+/* Navbar */
+.row {
+    font-size: 1.5rem;
+}
+.row-toggler{
+    background-color: aquamarine;
+}
+.container-fluid {
+    background-color: #f8f9fa;
+  }  
+  .container-fluid div .navbar {
+    padding: 2rem 0;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container-fluid div .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .container-fluid div .navbar .container-fluid .navbar-brand {
+    font-size: 5rem;
     font-weight: bold;
-    font-size: 2.5rem; /* increased font size */
-    letter-spacing: 1px;
-    color: #ff5555; /* bright red color */
-}
-.nav-link {
-    font-weight: bold;
-    letter-spacing: 1px;
-    color: #ffcccc; /* bright pink color */
-}
-.navbar-dark .navbar-toggler-icon {
-    background-color: #ff5555; /* bright red color */
-}
-.navbar-toggler:focus,
-.navbar-toggler:active,
-.navbar-toggler-icon:focus,
-.navbar-toggler-icon:active {
-    outline: none;
-    box-shadow: none;
-}
-.form-control:focus {
-    border-color: #ff5555; /* bright red color */
-    box-shadow: none;
-}
-
-/* Customize News Cards */
-.card {
-    margin-bottom: 2rem;
-    border-radius: 0;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    color: #dc3545;
+  }
+  
+  .container-fluid div .navbar .container-fluid .navbar-toggler {
     border: none;
-}
-.card:hover {
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    transition: all 0.2s ease;
-}
-.card-img-top {
-    height: 15rem;
-    object-fit: cover;
-}
-.card-body {
-    padding: 1rem;
-}
-.card-title {
-    font-weight: bold;
-    font-size: 2rem; /* increased font size */
-    margin-bottom: 0.5rem;
-    text-transform: capitalize;
-    color: #ff5555; /* bright red color */
-}
-.card-text {
-    font-size: 1.5rem; /* increased font size */
-    line-height: 1.4;
-    color: #ffcccc; /* bright pink color */
-}
-.card-footer {
-    background-color: #ffdddd; /* light red color */
-    border-top: none;
-}
-.card-footer small {
-    color: #ffcccc; /* bright pink color */
-}
-
-/* Customize Footer */
-.navbar-dark .navbar-nav .nav-link {
-    color: #ffcccc; /* bright pink color */
-}
-.navbar-dark .navbar-nav .nav-link:hover {
-    color: #ff5555; /* bright red color */
-}
-.navbar-dark .navbar-nav .active > .nav-link,
-.navbar-dark .navbar-nav .nav-link.active,
-.navbar-dark .navbar-nav .nav-link.show,
-.navbar-dark .navbar-nav .show > .nav-link {
-    color: #ff5555; /* bright red color */
-}
-.text-muted {
+    outline: none;
+  }
+  
+  .container-fluid div .navbar .container-fluid .navbar-toggler .navbar-toggler-icon {
+    background-color: #dc3545;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .navbar-nav {
+    margin-left: auto;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .navbar-nav .nav-item {
+    margin: 0 1rem;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link {
+    color: grey;
     font-size: 1.2rem;
-    color: #ffcccc; /* bright pink color */
-}
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link:hover {
+    color: #dc3545;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .d-flex .form-control {
+    width: 20rem;
+    margin-right: 1rem;
+    border-color: #dc3545;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .d-flex .btn {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .container-fluid div .navbar .container-fluid .collapse .d-flex .btn:hover {
+    background-color: #c82333;
+  }
+  
+  /* Footer */
+
+  
