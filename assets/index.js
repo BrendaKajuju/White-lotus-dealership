@@ -216,7 +216,8 @@ function displayNews() {
         card.className ="p-2";
 
         var image = document.createElement('img');
-        image.setAttribute("height", "matchparnt");
+        image.className = "card-img-top";
+        image.setAttribute("height", "matchparent");
         image.setAttribute("width", "100%")
         image.src = article.urlToImage;
 
@@ -241,15 +242,68 @@ function displayNews() {
         link.href = article.url
         link.innerHTML="Read more..."
 
+        var cardFooter = document.createElement('div');
+        cardFooter.className = "card-footer";
+
+         // Create like and dislike buttons
+         var likeButton = document.createElement('button');
+         likeButton.className = "btn btn-success mr-2";
+         likeButton.innerHTML = "Like";
+         likeButton.addEventListener("click", () => {
+         // Increment like count
+         likeCount.innerHTML = parseInt(likeCount.innerHTML) + 1;
+         });
+         
+         var dislikeButton = document.createElement('button');
+         dislikeButton.className = "btn btn-danger";
+         dislikeButton.innerHTML = "Dislike";
+         dislikeButton.addEventListener("click", () => {
+         // Increment dislike count
+         dislikeCount.innerHTML = parseInt(dislikeCount.innerHTML) + 1;
+         });
+         
+         // Create button count display
+         var likeCount = document.createElement('span');
+         likeCount.innerHTML = 0;
+         
+         var dislikeCount = document.createElement('span');
+         dislikeCount.innerHTML = 0;
+         
+         var buttonCount = document.createElement('div');
+         buttonCount.className = "mt-2";
+
+        // Add styles to the like and dislike buttons
+        likeButton.style.backgroundColor = "grey";
+        likeButton.style.color = "white";
+
+        dislikeButton.style.backgroundColor = "grey";
+        dislikeButton.style.color = "white";
+
+        // Add styles to the button count display
+        buttonCount.style.display = "flex";
+        buttonCount.style.justifyContent = "space-between";
+        buttonCount.style.alignItems = "center";
+        buttonCount.style.fontSize = "18px";
+        buttonCount.style.fontWeight = "bold";
+
         //Append all relevant text details to the cardbody
         cardBody.appendChild(newsTitle);
         cardBody.appendChild(dateTitle);
         cardBody.appendChild(description);
         cardBody.appendChild(link);
 
+        buttonCount.appendChild(likeButton);
+        buttonCount.appendChild(likeCount);
+        buttonCount.appendChild(dislikeButton);
+        buttonCount.appendChild(dislikeCount);
+        cardFooter.appendChild(buttonCount);
+
+
         //Append image and card body to fill in the card
         card.appendChild(image);
         card.appendChild(cardBody);
+        card.appendChild(cardFooter);
+
 
         //Append card to the column
         col.appendChild(card)
