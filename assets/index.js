@@ -185,22 +185,17 @@ const fetchTechnologyNav = async () => {
 }
 
 //Function to fetch data from search news function
-function fetchSearchNews() {
-       newsDetails.innerHTML = "";
-    fetch (`https://newsapi.org/v2/everything?q=${input.value}&apiKey=${apiKey}`)
-    .then ((response) => {
-        return response.json() 
-    }).then ((data)=> 
-    data.articles.forEach(article => {
-        let li = document.createElement('li');
-        let a = document.createElement('a');
-        a.setAttribute('href', article.url);
-        a.setAttribute('target', "_blank");
-        a.textContent = article.title;
-        li.appendChild(a);
-        newsDetails.appendChild(li)
-    }))
+const fetchSearchNews = async () => {
+    const response = await fetch(`${searchEverything}${searchNews.value}&apiKey=${apiKey}`);
+    newsArr = [];
+    if (response.status >= 200 && response.status < 300){
+        const newsObj = await response.json ()
+        newsArr = newsObj.articles;
+    } else {
+        console.log(response.status, response.statusText);
     }
+    displayNews ();
+}
 
 //Main Function that adds News to our html Page
 

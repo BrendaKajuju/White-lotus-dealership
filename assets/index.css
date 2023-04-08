@@ -9,18 +9,18 @@
     background-color: #f8f9fa;
   }  
   .container-fluid div .navbar {
-    padding: 2rem 0;
+    padding: 2rem;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   }
   
   .container-fluid div .navbar .container-fluid {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-evenly;
     align-items: center;
   }
   
   .container-fluid div .navbar .container-fluid .navbar-brand {
-    font-size: 5rem;
+    font-size: 3rem;
     font-weight: bold;
     color: #dc3545;
   }
@@ -44,7 +44,7 @@
   
   .container-fluid div .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link {
     color: grey;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     transition: color 0.3s ease-in-out;
   }
