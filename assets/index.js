@@ -183,7 +183,6 @@ const fetchTechnologyNav = async () => {
     //Pass the resulting objects into a function that will handle the display
     displayNews ();
 }
-
 //Function to fetch data from search news function
 const fetchSearchNews = async () => {
     const response = await fetch(`${searchEverything}${searchNews.value}&apiKey=${apiKey}`);
@@ -198,6 +197,7 @@ const fetchSearchNews = async () => {
 }
 
 //Main Function that adds News to our html Page
+
 
 function displayNews() {
     newsDetails.innerHTML = "";
