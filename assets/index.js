@@ -210,7 +210,7 @@ function displayNews() {
         // Work with objects in the api to create displayed elements
         var date = article.publishedAt.split("T")
         var col = document.createElement('div');
-        col.className="col-sm-12 col-md-4 col-lg-3 p-3 card";
+        col.className="col-sm-12 col-md-4 col-lg-3 p-2 card";
 
         var card = document.createElement('div');
         card.className ="p-2";
@@ -242,21 +242,28 @@ function displayNews() {
         link.href = article.url
         link.innerHTML="Read more..."
 
-        var cardFooter = document.createElement('div');
-        cardFooter.className = "card-footer";
+        // var cardFooter = document.createElement('div');
+        // cardFooter.className = "card-footer";
+        // Container to hold the icons
+        var iconContainer = document.createElement('div');
+        iconContainer.className = "icon-container";
+        iconContainer.style.display = "flex";
+        iconContainer.style.justifyContent = "flex-start";
+        iconContainer.style.alignItems = "center";
+        iconContainer.style.margin = "10px";
 
          // Create like and dislike buttons
-         var likeButton = document.createElement('button');
-         likeButton.className = "btn btn-success mr-2";
-         likeButton.innerHTML = "Like";
+         var likeButton = document.createElement('i');
+         likeButton.className = "fas fa-thumbs-up";
+        //  likeButton.innerHTML = "Like";
          likeButton.addEventListener("click", () => {
          // Increment like count
          likeCount.innerHTML = parseInt(likeCount.innerHTML) + 1;
          });
          
-         var dislikeButton = document.createElement('button');
-         dislikeButton.className = "btn btn-danger";
-         dislikeButton.innerHTML = "Dislike";
+         var dislikeButton = document.createElement('i');
+         dislikeButton.className = "fas fa-thumbs-down";
+        //  dislikeButton.innerHTML = "Dislike";
          dislikeButton.addEventListener("click", () => {
          // Increment dislike count
          dislikeCount.innerHTML = parseInt(dislikeCount.innerHTML) + 1;
@@ -269,40 +276,21 @@ function displayNews() {
          var dislikeCount = document.createElement('span');
          dislikeCount.innerHTML = 0;
          
-         var buttonCount = document.createElement('div');
-         buttonCount.className = "mt-2";
-
-        // Add styles to the like and dislike buttons
-        likeButton.style.backgroundColor = "grey";
-        likeButton.style.color = "white";
-
-        dislikeButton.style.backgroundColor = "grey";
-        dislikeButton.style.color = "white";
-
-        // Add styles to the button count display
-        buttonCount.style.display = "flex";
-        buttonCount.style.justifyContent = "space-between";
-        buttonCount.style.alignItems = "center";
-        buttonCount.style.fontSize = "18px";
-        buttonCount.style.fontWeight = "bold";
+        iconContainer.appendChild(likeButton);
+        iconContainer.appendChild(likeCount);
+        iconContainer.appendChild(dislikeButton);
+        iconContainer.appendChild(dislikeCount);
 
         //Append all relevant text details to the cardbody
         cardBody.appendChild(newsTitle);
         cardBody.appendChild(dateTitle);
         cardBody.appendChild(description);
         cardBody.appendChild(link);
-
-        buttonCount.appendChild(likeButton);
-        buttonCount.appendChild(likeCount);
-        buttonCount.appendChild(dislikeButton);
-        buttonCount.appendChild(dislikeCount);
-        cardFooter.appendChild(buttonCount);
-
+        cardBody.appendChild(iconContainer);
 
         //Append image and card body to fill in the card
         card.appendChild(image);
         card.appendChild(cardBody);
-        card.appendChild(cardFooter);
 
 
         //Append card to the column
