@@ -1,5 +1,4 @@
 # White-lotus-dealership
-A project that showcases cars for sale.
 This is a news web application built with JavaScript and the News API that allows users to fetch news articles from various categories such as general news, business, science, sports, technology, health, and entertainment.
 
 # Installation
@@ -15,14 +14,19 @@ Click on any of the navbar buttons to view news articles from that category.
 
 Search for news articles using the search bar.
 
-# API Key
-To use the News API, you will need an API key. You can get one for free by signing up on the News API website. Once you have your API key, open the script.js file and replace 1240cc9927f9486b85a82c75db3aa6df with your own API key on the following line:
+# Setup
+To use this app, you will need an API key from newsapi.org. Once you have obtained the API key, replace the value of apiKey in the JavaScript code with your own API key.
 
-# javascript
-Copy code
-const apiKey = "1240cc9927f9486b85a82c75db3aa6df";
-Credits
-This project was built with the help of the following resources:
+# Code Explanation
+This code is a JavaScript program that fetches news data from newsapi.org, displays the data on a webpage, and allows users to interact with the site to retrieve news data on specific topics or search for news data using keywords.
+
+The code initializes API endpoints for different categories of news such as business, general, science, sports, technology, health, and entertainment. Then it defines variables for navbar elements and event listeners to trigger API calls to fetch data when a user clicks on them. It also defines an async function that fetches news data and stores the objects into an array. The data objects in the array are then passed to another function that handles displaying the news data on the webpage.
+
+The code also includes a search functionality that lets users search for news data using keywords. When the user submits a search query, an API call is made using the search query and the resulting data objects are passed to a display function to show the search results.
+
+To use this program, a developer would need to have an API key from newsapi.org and replace the placeholder key in the code with the actual key. The code could also be modified to include more categories of news or to customize the layout and styling of the webpage.
+
+
 
 # News API documentation
 Bootstrap documentation
