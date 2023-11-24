@@ -1,4 +1,4 @@
-# White-lotus-dealership
+# White-lotus-News
 This is a news web application built with JavaScript and the News API that allows users to fetch news articles from various categories such as general news, business, science, sports, technology, health, and entertainment.
 
 # Installation
