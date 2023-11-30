@@ -9,7 +9,7 @@
     background-color: #f8f9fa;
   }  
   .container-fluid div .navbar {
-    padding: 2rem;
+    padding: 1rem;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   }
   
@@ -35,7 +35,7 @@
   }
   
   .container-fluid div .navbar .container-fluid .collapse .navbar-nav {
-    margin-left: auto;
+    margin-left: 0 1rem;
   }
   
   .container-fluid div .navbar .container-fluid .collapse .navbar-nav .nav-item {
@@ -69,33 +69,6 @@
   .container-fluid div .navbar .container-fluid .collapse .d-flex .btn:hover {
     background-color: #c82333;
   }
-
-  .rating {
-    display: inline-block;
-    width: 100%;
-    margin-top: 40px;
-    padding-top: 40px;
-    text-align: center;
-  }
-  
-  .like,
-  .dislike {
-    display: inline-block;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
-  .dislike:hover,
-  .like:hover {
-    color: #2EBDD1;
-    transition: all .2s ease-in-out;
-    transform: scale(1.1);
-  }
-  
-  .active {
-    color: #2EBDD1;
-  }
-  
   /* Footer */
   .icon-container {
     display: flex;

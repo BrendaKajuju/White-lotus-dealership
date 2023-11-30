@@ -3,7 +3,6 @@ This is a news web application built with JavaScript and the News API that allow
 
 # Installation
 Clone the repository to your local machine or download the files as a zip. You will need a text editor or an integrated development environment (IDE) to run the code.
-git clone https://github.com/your_username/news-web-app.git
 
 # Usage
 The web application is simple to use. Once you have the files on your local machine, open the index.html file in your browser. You can then do the following:
@@ -30,5 +29,5 @@ To use this program, a developer would need to have an API key from newsapi.org 
 
 # News API documentation
 Bootstrap documentation
-License
+# License
 This project is licensed under the MIT License. See the LICENSE file for more information.

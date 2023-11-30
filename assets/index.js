@@ -248,7 +248,7 @@ function displayNews() {
         var iconContainer = document.createElement('div');
         iconContainer.className = "icon-container";
         iconContainer.style.display = "flex";
-        iconContainer.style.justifyContent = "flex-start";
+        iconContainer.style.justifyContent = "flex-end";
         iconContainer.style.alignItems = "center";
         iconContainer.style.margin = "10px";
 
