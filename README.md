@@ -1,4 +1,4 @@
-# White-lotus-dealership
+# White-lotus-News
 This is a news web application built with JavaScript and the News API that allows users to fetch news articles from various categories such as general news, business, science, sports, technology, health, and entertainment.
 
 # Installation
@@ -29,5 +29,10 @@ To use this program, a developer would need to have an API key from newsapi.org 
 
 # News API documentation
 Bootstrap documentation
+<<<<<<< HEAD
 # License
 This project is licensed under the MIT License. See the LICENSE file for more information.
+=======
+License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+>>>>>>> 3159e5e24d1e2963ff6c27ee32b271be7afc6675
